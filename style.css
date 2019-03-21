@@ -1,0 +1,20 @@
+.container {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.name {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 55px;
+}
+
+
+.container2 {
+    border: 1px dashed black;
+    padding: 15px;
+    margin-bottom: 35px;
+    display: relative;
+}
+
+
