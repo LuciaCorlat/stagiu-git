@@ -9,28 +9,58 @@ body {  /* --> reset for the browser variants*/
 /*Start of the header segment */
 header {
     width: 100%;
-    border: 1px solid white;
+    height: 140px;
+    border: 1px solid rgba(29, 17, 40, 0.8);
     margin: 0 auto;
-    background-color: white;
+    background-image: url('http://www.baltana.com/files/wallpapers-8/Computer-Coding-Desktop-Wallpaper-24747.jpg');
+    background-size: cover;
+    background-position: center;
     box-shadow: 2px 2px rgba(109, 114, 195, 0.1);
     padding: 15px;
     margin-bottom: 25px;
     margin-top: -10px;
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+header:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 17, 40, 0.8);
+    z-index: 0;
 }
 
 header h1 {
     font-family: Lato, Helvetica, sans-serif;
     font-size: 38px;
     text-transform: uppercase;
-    color: rgba(29, 17, 40, 0.8);
+    color: white;
     margin-bottom: 2px;
+    flex: 1;
+    z-index: 1;
 }
 
-header p {
-    font-weight: 700;
-    color: rgba(29, 17, 40, 0.4);
-    text-transform: uppercase;
+nav {
+    flex: 1;
+    justify-items: space-evenly;
+    z-index: 1;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    font-size: 24px;
+}
+
+nav a:hover {
+    color: rgb(81, 79, 89);
 }
 
 /* Main segment - about me/work-xp/skills*/
@@ -77,39 +107,66 @@ main {
 
 .work-xp {
     display: flex;
+    flex-direction: column;
 }
 
 .interval {
     flex: 1;
+    display: flex;
+}
+
+.name-interval {
+    flex: 1;
 }
 
 .description {
-    flex: 1;
+    flex: 3;
 }
 
 .section ul {
     list-style-type: none;
     display: flex;
     justify-content: space-around;
-    align-items: baseline;
+}
+
+.skills li {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.skills li p {
+    flex: 1;
 }
 
 .section img {
-    height: 35px;
-    align-self: baseline;
-}
-
-.section li {
+    height: 45px;
     flex: 1;
-    flex-wrap: wrap;
+    align-self: center; 
 }
 
 .skill-name {
     border: 1px solid black;
-    margin-left: 0px;
     padding: 3px;
     font-family: Lato, Arial, Helvetica, sans-serif;
 }
+
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.gallery figure {
+    flex: 1;
+}
+
+.gallery figure img {
+    width: 250px;
+    height: auto;
+    border-radius: 15px;
+}
+
 
 footer {
     width: 100%;
