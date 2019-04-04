@@ -15,7 +15,7 @@ header {
     background-image: url('http://www.baltana.com/files/wallpapers-8/Computer-Coding-Desktop-Wallpaper-24747.jpg');
     background-size: cover;
     background-position: center;
-    box-shadow: 2px 2px rgba(109, 114, 195, 0.1);
+    box-shadow: 3px 3px rgba(109, 114, 195, 0.1);
     padding: 15px;
     margin-bottom: 25px;
     margin-top: -10px;
@@ -33,12 +33,13 @@ header:before {
     left: 0;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     background-color: rgba(29, 17, 40, 0.8);
     z-index: 0;
 }
 
 header h1 {
-    font-family: Lato, Helvetica, sans-serif;
+    font-family: "Lato", Helvetica, sans-serif;
     font-size: 38px;
     text-transform: uppercase;
     color: white;
@@ -92,7 +93,7 @@ main {
 .section h3 {
     color: white;
     background-color: rgb(29, 17, 40);
-    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
     text-transform: uppercase;
     font-weight: bold;
     margin-left: -50px;
@@ -147,9 +148,42 @@ main {
 .skill-name {
     border: 1px solid black;
     padding: 3px;
-    font-family: Lato, Arial, Helvetica, sans-serif;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    position: relative;
 }
 
+.skill-name:before { /*tooltip*/
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(29, 17, 40);
+    color: white;
+    content: attr(text);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    text-transform: lowercase;
+    bottom: 150%;
+    left: 50%;
+    padding: 0.5em;
+}
+
+.skill-name:after { /*tooltip arrow*/
+    position: absolute;
+    bottom: 130%;
+    left: 100%;
+    margin-left: -5px;
+    width: 0;
+    border-top: 5px solid black;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content:"";
+    visibility: hidden;
+    opacity: 0;
+}
+
+
+/*past projects section*/
 .gallery {
     display: flex;
     flex-direction: row;
@@ -163,20 +197,69 @@ main {
 
 .gallery figure img {
     width: 250px;
-    height: auto;
+    height: 150px;
     border-radius: 15px;
 }
 
+.gallery figcaption {
+    font-family: "Lato", Helvetica, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* aside section*/
+
+.additional-info {
+    width: 25%;
+    border: 1px solid rgba(109, 114, 195, 0.2);
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 10px 10px rgba(109, 114, 195, 0.1);
+    padding: 25px;
+    margin-bottom: 35px;
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+}
+
+.additional-info p {
+    border-bottom: 1px solid rgba(109, 114, 195, 0.2);
+    padding: 15px;
+
+}
+
+.secondary-nav {
+    border-bottom: 1px solid rgba(109, 114, 195, 0.2);
+    padding: 15px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.secondary-nav a {
+    color: black;
+    padding: 15px;
+    flex: 1;
+}
+
+/* footer*/
 
 footer {
     width: 100%;
     background-color: white;
-    margin-bottom: 0;
+    margin-bottom: -20px;
     text-align: center;
     color:rgba(89, 65, 169, 0.5);
-    height: 30px;
-    font-family: Lato, Arial, Helvetica, sans-serif;
+    height: auto;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
 }
+
+footer p {
+    padding: 15px;
+}
+
+/* page behavior*/
 
 .section:hover {
     border: 1px solid rgba(109, 114, 195, 0.5);
@@ -193,8 +276,42 @@ footer {
     box-shadow: 5px 5px rgba(109, 114, 195, 0.5);
     background-color: rgb(81, 79, 89);
     color: white;
-    font-family: Lato, Arial, Helvetica, sans-serif;
-    text-transform: uppercase;
     font-weight: bold;
 }
 
+.skill-name:hover:before,
+.skill-name:hover:after {
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.gallery figure img:hover {
+    box-shadow: 7px 7px rgba(109, 114, 195, 0.3);
+    width: 250px;
+    height: 150px;
+    border-radius: 15px;
+}
+
+@media screen and (max-width: 1258px) {
+    .work-xp {
+        font-size: 1rem;
+    }
+
+    .name-interval {
+        margin-right: 2em;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .section ul {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 738px) {
+    .secondary-nav a {
+        font-size: 2rem;
+        margin: 1rem;
+    }
+}
