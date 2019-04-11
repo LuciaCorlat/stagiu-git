@@ -1,0 +1,219 @@
+.header {
+    width: 100%;
+    height: 140px;
+    border: 1px solid rgba(29, 17, 40, 0.8);
+    margin: 0 auto;
+    background-image: url('http://www.baltana.com/files/wallpapers-8/Computer-Coding-Desktop-Wallpaper-24747.jpg');
+    background-size: cover;
+    background-position: center;
+    box-shadow: 3px 3px rgba(109, 114, 195, 0.1);
+    padding: 15px;
+    margin-bottom: 25px;
+    margin-top: -10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.header:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(29, 17, 40, 0.8);
+    z-index: 0;
+}
+
+.header h1 {
+    font-family: "Lato", Helvetica, sans-serif;
+    font-size: 38px;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 2px;
+    flex: 1;
+    z-index: 1;
+}
+
+nav {
+    flex: 1;
+    justify-items: space-evenly;
+    z-index: 1;
+}
+
+nav a {
+    color: white;
+    margin: 10px;
+    font-size: 24px;
+}
+
+nav a:hover {
+    color: rgb(81, 79, 89);
+}
+
+/*end of the header section*/
+
+.about-me,
+.work-xp,
+.skills { /* general container-type styles */
+    border: 1px solid rgba(109, 114, 195, 0.2);
+    margin: 0 auto;
+    background-color: white;
+    box-shadow: 10px 10px rgba(109, 114, 195, 0.1);
+    padding: 15px;
+    flex: 1;
+    text-align: justify;
+}
+
+/*start of the content section*/
+
+div h3 {
+    color: white;
+    background-color: rgb(29, 17, 40);
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: bold;
+    z-index: 0;
+    border: 1px solid rgba(29, 17, 40, 0.2);
+    box-shadow: 5px 5px rgba(29, 17, 40, 0.2);
+    width: auto;
+    padding: 5px;
+    text-align: center;
+}
+
+.work-xp {
+    display: flex;
+    flex-direction: column;
+}
+
+.interval {
+    flex: 1;
+    display: flex;
+}
+
+.name-interval {
+    flex: 1;
+}
+
+.description {
+    flex: 3;
+}
+
+.section ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.skills li {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.skills li p {
+    flex: 1;
+}
+
+.skills li img {
+    width: 40px;
+    align-self: center; 
+}
+
+.skill-name {
+    border: 1px solid black;
+    padding: 3px;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+    position: relative;
+}
+
+.skill-name:before { /*tooltip*/
+    position: absolute;
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: rgb(29, 17, 40);
+    color: white;
+    content: attr(text);
+    opacity: 0;
+    visibility: hidden;
+    z-index: 2;
+    text-transform: lowercase;
+    bottom: 150%;
+    left: 50%;
+    padding: 0.5em;
+}
+
+.skill-name:after { /*tooltip arrow*/
+    position: absolute;
+    bottom: 130%;
+    left: 100%;
+    margin-left: -55px;
+    width: 0;
+    border-top: 5px solid black;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+    content:"";
+    visibility: hidden;
+    opacity: 0;
+}
+
+/* footer*/
+
+footer {
+    width: 100%;
+    background-color: white;
+    margin-bottom: -20px;
+    text-align: center;
+    color:rgba(89, 65, 169, 0.5);
+    height: auto;
+    font-family: "Lato", Arial, Helvetica, sans-serif;
+}
+
+footer p {
+    padding: 15px;
+}
+
+.secondary-nav {
+    border-bottom: 1px solid rgba(109, 114, 195, 0.2);
+    padding: 15px;
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.secondary-nav a {
+    color: black;
+    padding: 15px;
+    flex: 1;
+}
+
+/* page behavior*/
+
+.section:hover {
+    border: 1px solid rgba(109, 114, 195, 0.5);
+    box-shadow: 10px 10px rgba(109, 114, 195, 0.5);
+}
+
+.section h3:hover {
+    font-size: 20px;
+    box-shadow: 10px 10px rgba(109, 114, 195, 0.5);
+}
+
+.skill-name:hover {
+    border: 1px solid rgba(109, 114, 195, 0.5);
+    box-shadow: 5px 5px rgba(109, 114, 195, 0.5);
+    background-color: rgb(81, 79, 89);
+    color: white;
+    font-weight: bold;
+}
+
+.skill-name:hover:before,
+.skill-name:hover:after {
+    opacity: 1;
+    visibility: visible;
+
+}
